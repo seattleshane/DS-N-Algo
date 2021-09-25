@@ -11,11 +11,7 @@ class Array(object):
         length of the array as determined at initialization.
     values : list[Any]
         Values of the array, any type.
-
-
     """
-
-
 
     def __init__(self, length: int):
         """
@@ -60,13 +56,13 @@ class Array(object):
             else:
                 raise IndexError(f"Index {index} out of range, legnth of array is {self.length}.")
         else:
-            raise TypeError(f"Index must by type int, got {type(index)}") 
+            raise TypeError(f"Index must by type int, got {type(index)}")
 
     def __setitem__(self, index, value) -> Any:
         """
         Sets value at given index.
 
-        Returns the result of __getitem__ passing the index for the item to 
+        Returns the result of __getitem__ passing the index for the item to
         validate that the value has been set to the given index.
 
         Parameters
