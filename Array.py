@@ -13,13 +13,13 @@ class Array(object):
             self.values.append(None)
         
     def __getitem__(self, index: int) -> Any:
-        if index <= len(self.length):
+        if index <= len(self.values):
             return self.values[index]
         else:
             raise IndexError
         
     def __setitem__(self, index, value):
-        if index <= len(self.length):
+        if index <= len(self.values):
             self.values[index] = value
         else:
             raise IndexError
