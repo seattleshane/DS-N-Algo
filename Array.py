@@ -16,13 +16,13 @@ class Array(object):
         if index <= len(self.values):
             return self.values[index]
         else:
-            raise IndexError
+            raise IndexError(f"Index {index} out of range, legnth of array is {self.length}.")
         
     def __setitem__(self, index, value):
         if index <= len(self.values):
             self.values[index] = value
         else:
-            raise IndexError
+            raise IndexError(f"Index {index} out of range, legnth of array is {self.length}.")
 
 if __name__ == "__main__":
     a = Array(10)
@@ -30,3 +30,4 @@ if __name__ == "__main__":
     print(a[2])
     a[2] = 3
     assert a[2] == 3
+    assert a[40] == 0
