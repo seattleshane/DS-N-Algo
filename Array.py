@@ -5,7 +5,7 @@ class Array(object):
     Defines an array with length. Indexing is donw through magic method
     __getitem__ to return value at indexed location in the array.  
     """
-    
+
     def __init__(self, length: int):
         self.length: int = length
         self.values: list  = []
@@ -13,13 +13,13 @@ class Array(object):
             self.values.append(None)
         
     def __getitem__(self, index: int) -> Any:
-        if index > len(self.length):
+        if index <= len(self.length):
             return self.values[index]
         else:
             raise IndexError
         
     def __setitem__(self, index, value):
-        if index > len(self.length):
+        if index <= len(self.length):
             self.values[index] = value
         else:
             raise IndexError
