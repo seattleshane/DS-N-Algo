@@ -58,12 +58,9 @@ class Array(object):
         else:
             raise TypeError(f"Index must by type int, got {type(index)}")
 
-    def __setitem__(self, index, value) -> Any:
+    def __setitem__(self, index, value):
         """
         Sets value at given index.
-
-        Returns the result of __getitem__ passing the index for the item to
-        validate that the value has been set to the given index.
 
         Parameters
         ----------
@@ -75,7 +72,6 @@ class Array(object):
         if isinstance(index,int):
             if index <= len(self.values):
                 self.values[index] = value
-                return self.__getitem__(index)
             else:
                 raise IndexError(
                     f"Index {index} out of range, legnth of array is {self.length}.") #Technically this is out of PEP8 Standard because it's too long, but it's a special case because it's a string
